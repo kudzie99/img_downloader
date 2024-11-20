@@ -21,7 +21,7 @@ if search:
         if results:
             # Display images in two columns
             col1, col2 = st.columns(2)
-            for i, result in enumerate(results[:10]):
+            for i, result in enumerate(results[:100]):
                 image_url = result.get("urls", {}).get("small", "")
                 if i % 2 == 0:
                     col1.image(image_url, use_column_width=True)
@@ -30,4 +30,4 @@ if search:
         else:
             st.write("No images found.")
     else:
-        st.write("Error fetching images. Please try again later.")
+        st.write("Inputbox must not be empty. Please try again.")
